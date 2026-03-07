@@ -1,0 +1,13 @@
+tool_permissions:
+  viewer:
+    - search
+    - summarize
+  editor:
+    - search
+    - summarize
+    - write_file
+  admin:
+    - search
+    - summarize
+    - write_file
+    - delete_file
