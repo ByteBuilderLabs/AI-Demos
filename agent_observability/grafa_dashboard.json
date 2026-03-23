@@ -1,0 +1,185 @@
+{
+  "annotations": { "list": [] },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 1,
+  "id": null,
+  "links": [],
+  "panels": [
+    {
+      "title": "Total Node Invocations",
+      "description": "Cumulative invocations per agent node",
+      "type": "stat",
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 0 },
+      "datasource": { "type": "prometheus" },
+      "fieldConfig": {
+        "defaults": {
+          "color": { "mode": "palette-classic" },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "reduceOptions": { "calcs": ["lastNotNull"] },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "agent_node_invocations_total",
+          "legendFormat": "{{ node }}",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "title": "Node Errors",
+      "description": "Error count per node",
+      "type": "stat",
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 0 },
+      "datasource": { "type": "prometheus" },
+      "fieldConfig": {
+        "defaults": {
+          "color": { "mode": "thresholds" },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              { "color": "#73BF69", "value": null },
+              { "color": "#FF9830", "value": 1 },
+              { "color": "#F2495C", "value": 5 }
+            ]
+          },
+          "unit": "short",
+          "noValue": "0 — All clear"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "area",
+        "reduceOptions": { "calcs": ["lastNotNull"] },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "agent_node_errors_total",
+          "legendFormat": "{{ node }} — {{ error }}",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "title": "Avg Latency per Node (ms)",
+      "description": "Average duration of each agent node",
+      "type": "stat",
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 8 },
+      "datasource": { "type": "prometheus" },
+      "fieldConfig": {
+        "defaults": {
+          "color": { "mode": "palette-classic" },
+          "unit": "ms",
+          "decimals": 0
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "reduceOptions": { "calcs": ["lastNotNull"] },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "agent_node_duration_ms_sum / agent_node_duration_ms_count",
+          "legendFormat": "{{ node }}",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "title": "Latency Over Time (ms)",
+      "description": "Node latency trend — each data point is a scrape",
+      "type": "timeseries",
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 8 },
+      "datasource": { "type": "prometheus" },
+      "fieldConfig": {
+        "defaults": {
+          "color": { "mode": "palette-classic" },
+          "custom": {
+            "drawStyle": "points",
+            "lineWidth": 0,
+            "fillOpacity": 0,
+            "pointSize": 8
+          },
+          "unit": "ms",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              { "color": "green", "value": null },
+              { "color": "yellow", "value": 2000 },
+              { "color": "red", "value": 5000 }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": { "displayMode": "table", "placement": "bottom" },
+        "tooltip": { "mode": "multi" }
+      },
+      "targets": [
+        {
+          "expr": "agent_node_duration_ms_sum / agent_node_duration_ms_count",
+          "legendFormat": "{{ node }}",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "title": "Alert: High Error Rate",
+      "description": "Fires when any node exceeds 3 errors",
+      "type": "stat",
+      "gridPos": { "h": 4, "w": 24, "x": 0, "y": 16 },
+      "datasource": { "type": "prometheus" },
+      "fieldConfig": {
+        "defaults": {
+          "color": { "mode": "thresholds" },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              { "color": "#73BF69", "value": null },
+              { "color": "#F2495C", "value": 3 }
+            ]
+          },
+          "unit": "short",
+          "noValue": "0 — All clear"
+        },
+        "overrides": []
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "reduceOptions": { "calcs": ["lastNotNull"] },
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "agent_node_errors_total",
+          "legendFormat": "{{ node }}",
+          "refId": "A"
+        }
+      ]
+    }
+  ],
+  "refresh": "5s",
+  "schemaVersion": 39,
+  "tags": ["agent", "observability", "langgraph"],
+  "templating": { "list": [] },
+  "time": { "from": "now-30m", "to": "now" },
+  "timepicker": {},
+  "timezone": "browser",
+  "title": "Agent Observability",
+  "uid": "agent-observability-v2",
+  "version": 1
+}
