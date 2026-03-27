@@ -1,0 +1,13 @@
+Using the github-triage MCP tools, triage all open issues in the repo:
+
+1. Fetch all open issues
+2. For each issue, classify it:
+   - Type: bug, feature-request, question, or documentation
+   - Priority: P0 (critical/breaking), P1 (important), P2 (normal), P3 (low)
+3. Apply the type and priority as labels
+4. Post a comment with:
+   - The classification reasoning (1-2 sentences)
+   - A suggested next step for the maintainer
+   - If it's a bug, ask for reproduction steps if missing
+
+Process all issues in one pass.
