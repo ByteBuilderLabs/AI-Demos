@@ -1,0 +1,31 @@
+# AcmeAPI Authentication Guide
+
+## JWT Configuration
+AcmeAPI uses JWT tokens for stateless authentication. The token expiration is controlled by the JWT_EXPIRATION environment variable, measured in seconds. The default value is 3600, meaning tokens expire one hour after issuance. To override this, set JWT_EXPIRATION in your .env file or pass it as a runtime flag. Tokens beyond their lifetime return a 401 Unauthorized response with the error code TOKEN_EXPIRED.
+
+## Refresh Tokens
+Long-lived sessions are supported through refresh tokens. When the primary JWT expires, the client can exchange a valid refresh token at the /auth/refresh endpoint to obtain a new access token. Refresh tokens have a separate lifetime, configured via REFRESH_TOKEN_TTL, defaulting to seven days. Revoke a refresh token by calling the /auth/revoke endpoint with the token ID.
+
+## Signing and Verification
+Tokens are signed with HS256 by default. For production environments, switch to RS256 by setting JWT_ALGORITHM=RS256 and providing a private key in JWT_PRIVATE_KEY. Public key verification is handled automatically when JWT_PUBLIC_KEY is set. Never commit signing keys to source control.
+
+## Rate Limiting
+AcmeAPI enforces rate limits per API key. The default limit is 100 requests per minute, configurable through RATE_LIMIT_PER_MINUTE. Exceeding the limit returns a 429 Too Many Requests response with a Retry-After header indicating when to retry. Premium tier accounts can request higher limits through support.
+
+## Database Setup
+The application supports PostgreSQL and MySQL. Connection strings go in DATABASE_URL. For Postgres, use the format postgresql://user:password@host:5432/dbname. Migrations run automatically on startup unless AUTO_MIGRATE is set to false. The migration tool is Alembic, with version files stored in alembic/versions.
+
+## Deployment
+For production deployment, build the Docker image with docker build -t acmeapi:latest . and run it behind a reverse proxy. Nginx and Caddy configurations are provided in the examples/ directory. The container listens on port 8000 by default, override with the PORT environment variable.
+
+## Webhook Configuration
+AcmeAPI can send webhook events to external URLs for key actions like user registration or payment completion. Configure endpoints in the dashboard or via the /webhooks API. Each event is signed with HMAC-SHA256 using your webhook secret, available in the WEBHOOK_SECRET environment variable. Verify the X-Acme-Signature header on every incoming webhook.
+
+## Error Handling
+All errors follow the JSON:API error format. The response includes a code, a human-readable message, and an optional details field. Common error codes are TOKEN_EXPIRED, INVALID_SIGNATURE, RATE_LIMITED, and VALIDATION_FAILED. Always log the request ID from the X-Request-ID header for traceability.
+
+## Logging and Observability
+Structured logs are emitted in JSON format to stdout. Integrate with Datadog, Honeycomb, or any OTLP-compatible collector by setting OTEL_EXPORTER_OTLP_ENDPOINT. Distributed traces propagate through the traceparent header automatically. Critical errors trigger Sentry alerts if SENTRY_DSN is configured.
+
+## API Versioning
+AcmeAPI supports versioned endpoints under /v1, /v2, etc. Older versions remain available for at least twelve months after a new major version ships. Deprecation notices are sent via email and included in the response headers as Deprecation and Sunset.
