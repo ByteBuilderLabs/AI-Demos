@@ -1,0 +1,102 @@
+[
+  {
+    "q": "What is the capital of Australia?",
+    "model_answer": "Canberra"
+  },
+  {
+    "q": "What is the chemical symbol for gold?",
+    "model_answer": "Au"
+  },
+  {
+    "q": "In what year did the Berlin Wall fall?",
+    "model_answer": "1989"
+  },
+  {
+    "q": "Who painted the Mona Lisa?",
+    "model_answer": "Leonardo da Vinci"
+  },
+  {
+    "q": "What is the largest organ in the human body?",
+    "model_answer": "Skin"
+  },
+  {
+    "q": "What is the only mammal capable of true flight?",
+    "model_answer": "Bat"
+  },
+  {
+    "q": "What is the atomic number of oxygen?",
+    "model_answer": "8"
+  },
+  {
+    "q": "How many keys are on a standard piano?",
+    "model_answer": "88"
+  },
+  {
+    "q": "What is the deepest point in the ocean called?",
+    "model_answer": "Challenger Deep"
+  },
+  {
+    "q": "What is the chemical symbol for potassium?",
+    "model_answer": "K"
+  },
+  {
+    "q": "In what year was the first iPhone released?",
+    "model_answer": "2007"
+  },
+  {
+    "q": "What is the largest living species of shark?",
+    "model_answer": "Whale shark"
+  },
+  {
+    "q": "Who wrote The Hitchhiker's Guide to the Galaxy?",
+    "model_answer": "Douglas Adams"
+  },
+  {
+    "q": "What is the currency of Japan?",
+    "model_answer": "Yen"
+  },
+  {
+    "q": "What is the capital of Canada?",
+    "model_answer": "Ottawa"
+  },
+  {
+    "q": "In what year did World War I end?",
+    "model_answer": "1918"
+  },
+  {
+    "q": "What is the hardest naturally occurring mineral?",
+    "model_answer": "Diamond"
+  },
+  {
+    "q": "Which planet in our solar system is the hottest?",
+    "model_answer": "Venus"
+  },
+  {
+    "q": "What is the largest desert in the world by area?",
+    "model_answer": "Antarctic Desert"
+  },
+  {
+    "q": "Which planet is on average the closest to Earth?",
+    "model_answer": "Venus"
+  },
+  {
+    "q": "Which mountain is tallest measured from base to summit?",
+    "model_answer": "Mauna Kea"
+  },
+  {
+    "q": "How many ribs does a typical adult human have?",
+    "model_answer": "24"
+  },
+  {
+    "q": "How many time zones does Russia span?",
+    "model_answer": "11"
+  },
+  {
+    "q": "What is the capital of Switzerland?",
+    "model_answer": "Bern"
+  },
+  {
+    "q": "Which country has the most natural lakes?",
+    "model_answer": "Canada"
+  }
+]

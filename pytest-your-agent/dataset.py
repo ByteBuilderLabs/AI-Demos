@@ -1,0 +1,38 @@
+QA = [
+    {"q": "What is the capital of Australia?", "answer": "Canberra"},
+    {"q": "What is the chemical symbol for gold?", "answer": "Au"},
+    {"q": "In what year did the Berlin Wall fall?", "answer": "1989"},
+    {"q": "Who painted the Mona Lisa?", "answer": "Leonardo da Vinci"},
+    {"q": "What is the largest organ in the human body?", "answer": "Skin"},
+    {"q": "What is the only mammal capable of true flight?", "answer": "Bat"},
+    {"q": "What is the atomic number of oxygen?", "answer": "8"},
+    {"q": "How many keys are on a standard piano?", "answer": "88"},
+    {"q": "What is the deepest point in the ocean called?", "answer": "Challenger Deep"},
+    {"q": "What is the chemical symbol for potassium?", "answer": "K"},
+    {"q": "In what year was the first iPhone released?", "answer": "2007"},
+    {"q": "What is the largest living species of shark?", "answer": "Whale shark"},
+    {"q": "Who wrote The Hitchhiker's Guide to the Galaxy?", "answer": "Douglas Adams"},
+    {"q": "What is the currency of Japan?", "answer": "Yen"},
+    {"q": "What is the capital of Canada?", "answer": "Ottawa"},
+    {"q": "In what year did World War I end?", "answer": "1918"},
+    {"q": "What is the hardest naturally occurring mineral?", "answer": "Diamond"},
+
+    {"q": "Which planet in our solar system is the hottest?", "answer": "Venus"},
+    {"q": "What is the largest desert in the world by area?", "answer": "Antarctica"},
+    {"q": "Which planet is on average the closest to Earth?", "answer": "Mercury"},
+    {"q": "Which mountain is tallest measured from base to summit?", "answer": "Mauna Kea"},
+    {"q": "How many ribs does a typical adult human have?", "answer": "24"},
+    {"q": "How many time zones does Russia span?", "answer": "11"},
+    {"q": "What is the capital of Switzerland?", "answer": "Bern"},
+    {"q": "Which country has the most natural lakes?", "answer": "Canada"},
+]
+
+SPARES = [
+    {"q": "Which US state has the largest coastline?", "answer": "Alaska"},
+    {"q": "What is the smallest country in the world by area?", "answer": "Vatican City"},
+    {"q": "Which bird is the fastest in level flight?", "answer": "Common swift"},
+    {"q": "What is the most abundant gas in Earth's atmosphere?", "answer": "Nitrogen"},
+    {"q": "Which element is the most abundant in the human body by mass?", "answer": "Oxygen"},
+    {"q": "What is the largest island in the Mediterranean?", "answer": "Sicily"},
+    {"q": "Which blood type is the universal plasma donor?", "answer": "AB"},
+]
