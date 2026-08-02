@@ -1,0 +1,3 @@
+The eval harness now runs fifty times per commit.
+Latency budget is two seconds per request.
+Nothing here mentions saved model state.
