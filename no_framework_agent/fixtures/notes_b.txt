@@ -1,4 +1,0 @@
-Saved a checkpoint at epoch 10.
-The checkpoint at epoch 20 was corrupted.
-Resumed from the epoch 10 checkpoint instead.
-Final checkpoint went to cold storage.

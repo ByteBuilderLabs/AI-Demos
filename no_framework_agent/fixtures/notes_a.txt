@@ -1,3 +1,0 @@
-Training run 12 finished overnight.
-The loss curve looks flat after epoch 40.
-No artifacts were written to disk.
