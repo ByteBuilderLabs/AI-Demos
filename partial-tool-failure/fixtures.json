@@ -1,0 +1,6 @@
+{
+  "question": "What will ACME pay for its annual renewal?",
+  "expected": 34560,
+  "accounts": {"ACME": {"seats": 120, "plan": "pro", "price_per_seat": 480}},
+  "discounts": {"ACME": 0.4}
+}
